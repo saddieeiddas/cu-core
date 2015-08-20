@@ -1,6 +1,6 @@
 {
   "name": "cu-core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Core Camelot Unchained Client Library",
   "license": "MPL-2.0",
   "main": "lib/main.js",
@@ -26,12 +26,15 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "del": "^1.2.1",
     "dts-bundle": "^0.3.0",
+    "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-sequence": "^0.4.1",
+    "gulp-typescript": "^2.8.1",
     "gulp-watch": "^4.3.5",
-    "ntypescript": "*"
+    "merge2": "^0.3.6"
   },
   "typescript": {
     "definition": "./lib/cu-core.d.ts"
