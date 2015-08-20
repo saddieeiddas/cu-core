@@ -8,7 +8,6 @@ declare module 'cu-core' {
       */
     import CoreSettings from '__cu-core/CoreSettings';
     import clientInterface from '__cu-core/clientInterface';
-    var cuAPI: clientInterface;
     import abilityTags from '__cu-core/constants/abilityTags';
     import archetype from '__cu-core/constants/archetype';
     import buildUIMode from '__cu-core/constants/buildUIMode';
@@ -22,7 +21,7 @@ declare module 'cu-core' {
     import tagConstraintType from '__cu-core/constants/tagConstraintType';
     import tags from '__cu-core/constants/tags';
     import Ability from '__cu-core/classes/Ability';
-    export { cuAPI, CoreSettings, clientInterface, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability };
+    export { CoreSettings, clientInterface, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability };
 }
 
 declare module '__cu-core/CoreSettings' {
