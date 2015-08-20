@@ -22,7 +22,7 @@ Within a CU UI Component be sure to run 'tsd install' after installing cu-core s
 
 ```javascript
 import {race, channelId} from 'cu-core';
-console.log('Strm is # + race.STRM);
+console.log('Strm is #' + race.STRM);
 console.log('Hatchery is channel #' + channelId.HATCHERY);
 ```
 
