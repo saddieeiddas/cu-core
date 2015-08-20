@@ -1,0 +1,32 @@
+{
+  "name": "cu-core",
+  "version": "0.1.0",
+  "description": "Core Camelot Unchained Client Library",
+  "license": "MPL-2.0",
+  "main": "lib/main.js",
+  "contributors": [
+    "codecorsair <jb@codecorsair.com>"
+  ],
+  "files": [
+    "lib/",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CUModSquad/cu-core.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dts-bundle": "^0.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sequence": "^0.4.1",
+    "gulp-watch": "^4.3.5",
+    "ntypescript": "*"
+  },
+  "typescript": {
+    "definition": "./lib/cu-core.d.ts"
+  }
+}
