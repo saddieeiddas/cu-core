@@ -3,7 +3,6 @@
     "module": "commonjs",
     "noImplicitAny": true,
     "removeComments": false,
-    "preserveConstEnums": true,
     "outDir": "./lib",
     "sourceMap": false,
     "definition": true,

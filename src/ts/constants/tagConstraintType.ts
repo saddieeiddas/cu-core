@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-const enum tagContstraintType {
+enum tagContstraintType {
   ALLOF = 0,
   ANYOF = 1,
   NONEOF = 2,

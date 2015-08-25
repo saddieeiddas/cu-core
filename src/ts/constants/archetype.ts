@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-const enum archetype {
+enum archetype {
   FIREMAGE = 0,
   EARTHMAGE = 1,
   WATERMAGE = 2,

@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-const enum jsKeyCodes {
+enum jsKeyCodes {
   'BACKSPACE' = 8,
   'TAB' = 9,
   'ENTER' = 13,

@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-const enum channelId {
+enum channelId {
   HATCHERY = 4,
   WYRMLING = 10
 };

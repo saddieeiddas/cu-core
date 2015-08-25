@@ -8,7 +8,7 @@
  * These are the tags needed by the C++ Layer to know which build variables
  * to send to the window.
  */
-const enum tags {
+enum tags {
   KEYBIND =  2,
   INPUT = 6,
   AUDIO = 8,

@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-const enum buildUIMode {
+enum buildUIMode {
   NOTBUILDING = 0,
   PLACINGPHANTOM = 1,
   PHANTOMPLACED = 2,

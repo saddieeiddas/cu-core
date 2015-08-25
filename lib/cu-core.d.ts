@@ -225,7 +225,7 @@ declare module '__cu-core/constants/abilityTags' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http//mozilla.org/MPL/2.0/.
       */
-    const enum abilityTags {
+    enum abilityTags {
         SYSTEM = 0,
         NONAGGRESSIVE = 1,
         NONINTERACTABLE = 2,
@@ -290,7 +290,7 @@ declare module '__cu-core/constants/archetype' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
-    const enum archetype {
+    enum archetype {
         FIREMAGE = 0,
         EARTHMAGE = 1,
         WATERMAGE = 2,
@@ -308,7 +308,7 @@ declare module '__cu-core/constants/buildUIMode' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
-    const enum buildUIMode {
+    enum buildUIMode {
         NOTBUILDING = 0,
         PLACINGPHANTOM = 1,
         PHANTOMPLACED = 2,
@@ -324,7 +324,7 @@ declare module '__cu-core/constants/channelId' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
-    const enum channelId {
+    enum channelId {
         HATCHERY = 4,
         WYRMLING = 10,
     }
@@ -337,7 +337,7 @@ declare module '__cu-core/constants/dxKeyCodes' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
-    const enum dxKeyCodes {
+    enum dxKeyCodes {
         'ESCAPE' = 1,
         'ONE' = 2,
         'TWO' = 3,
@@ -492,7 +492,7 @@ declare module '__cu-core/constants/emotes' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
-    const enum emotes {
+    enum emotes {
         DANCE1 = 0,
         DANCE2 = 1,
         WAVE1 = 2,
@@ -509,7 +509,7 @@ declare module '__cu-core/constants/jsKeyCodes' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
-    const enum jsKeyCodes {
+    enum jsKeyCodes {
         'BACKSPACE' = 8,
         'TAB' = 9,
         'ENTER' = 13,
@@ -745,7 +745,7 @@ declare module '__cu-core/constants/race' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
-    const enum race {
+    enum race {
         HAMADRYAD = 1,
         LUCHORPAN = 2,
         FIRBOG = 3,
@@ -819,7 +819,7 @@ declare module '__cu-core/constants/tagConstraintType' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
-    const enum tagContstraintType {
+    enum tagContstraintType {
         ALLOF = 0,
         ANYOF = 1,
         NONEOF = 2,
@@ -832,7 +832,7 @@ declare module '__cu-core/constants/tags' {
         * These are the tags needed by the C++ Layer to know which build variables
         * to send to the window.
         */
-    const enum tags {
+    enum tags {
             KEYBIND = 2,
             INPUT = 6,
             AUDIO = 8,

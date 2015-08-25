@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-const enum race {
+enum race {
   //TUATHA = 0,
   HAMADRYAD = 1,
   LUCHORPAN = 2,

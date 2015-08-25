@@ -4,7 +4,7 @@
  * file, You can obtain one at http//mozilla.org/MPL/2.0/.
  */
 
-const enum abilityTags {
+enum abilityTags {
   SYSTEM = 0,
   NONAGGRESSIVE = 1,   // Used for effects that should affect caster and/or allies.
   NONINTERACTABLE = 2, // Can't interact or be interacted with

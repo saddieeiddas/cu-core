@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-const enum emotes {
+enum emotes {
   DANCE1 = 0,
   DANCE2 = 1,
   WAVE1 = 2,

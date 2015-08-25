@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-const enum dxKeyCodes {
+enum dxKeyCodes {
   'ESCAPE' = 0x01,
   'ONE' = 0x02,
   'TWO' = 0x03,
