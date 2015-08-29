@@ -8,6 +8,7 @@ declare module 'cu-core' {
       */
     import CoreSettings from '__cu-core/CoreSettings';
     import clientInterface from '__cu-core/clientInterface';
+    import client from '__cu-core/client';
     import abilityTags from '__cu-core/constants/abilityTags';
     import archetype from '__cu-core/constants/archetype';
     import buildUIMode from '__cu-core/constants/buildUIMode';
@@ -21,7 +22,7 @@ declare module 'cu-core' {
     import tagConstraintType from '__cu-core/constants/tagConstraintType';
     import tags from '__cu-core/constants/tags';
     import Ability from '__cu-core/classes/Ability';
-    export { CoreSettings, clientInterface, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability };
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -217,6 +218,17 @@ declare module '__cu-core/clientInterface' {
         OnLogMessage(c: (category: string, level: number, time: string, process: number, thread: number, message: string) => void): void;
     }
     export default clientInterface;
+}
+
+declare module '__cu-core/client' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    import clientInterface from '__cu-core/clientInterface';
+    let client: clientInterface;
+    export default client;
 }
 
 declare module '__cu-core/constants/abilityTags' {
