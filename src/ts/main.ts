@@ -6,6 +6,7 @@
 
 import CoreSettings from './CoreSettings';
 import clientInterface from './clientInterface';
+import client from './client';
 
 // constants
 import abilityTags from './constants/abilityTags';
@@ -27,6 +28,7 @@ import Ability from './classes/Ability';
 export {
   CoreSettings,
   clientInterface,
+  client,
 
   // constants
   abilityTags,
