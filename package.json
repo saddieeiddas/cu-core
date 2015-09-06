@@ -16,6 +16,7 @@
   ],
   "files": [
     "lib/",
+    "ts/",
     "package.json",
     "README.md",
     "LICENSE"
