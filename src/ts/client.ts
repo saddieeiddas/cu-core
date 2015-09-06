@@ -18,9 +18,9 @@ declare var window: WindowInterface;
 let client: clientInterface = null;
 
 if (window.opener && window.opener.cuAPI) {
-  let cuClient = window.opener.cuAPI; // bind the alias to parent (as this instance will only have basic cuAPI functions)
+  client = window.opener.cuAPI; // bind the alias to parent (as this instance will only have basic cuAPI functions)
 } else if (window.cuAPI) {
-  let cuClient = window.cuAPI; // not a popout, so use existing cuAPI
+  client = window.cuAPI; // not a popout, so use existing cuAPI
 } else {
   // create a mock cuAPI to return
 }
