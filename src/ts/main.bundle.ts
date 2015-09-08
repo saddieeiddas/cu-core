@@ -8,7 +8,7 @@ import * as library from './main';
 
 // interface to allow us to bind library to window
 interface WindowInterface extends Window {
-    CuCore: any;
+  CuCore: any;
 }
 
 // declare window implements WindowInterface
