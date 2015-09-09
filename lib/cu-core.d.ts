@@ -22,7 +22,9 @@ declare module 'cu-core' {
     import tagConstraintType from '__cu-core/constants/tagConstraintType';
     import tags from '__cu-core/constants/tags';
     import Ability from '__cu-core/classes/Ability';
-    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability };
+    import Combatant from '__cu-core/classes/Combatant';
+    import Player from '__cu-core/classes/Player';
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -53,6 +55,7 @@ declare module '__cu-core/clientInterface' {
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     import tags from '__cu-core/constants/tags';
+    import race from '__cu-core/constants/race';
     interface clientInterface {
         initialized: boolean;
         OnInitialized(c: () => void): number;
@@ -150,7 +153,7 @@ declare module '__cu-core/clientInterface' {
         OnAnnouncement(c: (message: string, type: number) => void): void;
         OnCharacterIDChanged(c: (id: string) => void): void;
         OnCharacterFactionChanged(c: (faction: number) => void): void;
-        OnCharacterRaceChanged(c: (race: number) => void): void;
+        OnCharacterRaceChanged(c: (race: race) => void): void;
         OnCharacterNameChanged(c: (name: string) => void): void;
         OnCharacterHealthChanged(c: (health: number, maxHealth: number) => void): void;
         OnCharacterStaminaChanged(c: (stamina: number, maxStamina: number) => void): void;
@@ -303,6 +306,7 @@ declare module '__cu-core/constants/archetype' {
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     enum archetype {
+        NONE = -1,
         FIREMAGE = 0,
         EARTHMAGE = 1,
         WATERMAGE = 2,
@@ -758,6 +762,7 @@ declare module '__cu-core/constants/race' {
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     enum race {
+        NONE = -1,
         HAMADRYAD = 1,
         LUCHORPAN = 2,
         FIRBOG = 3,
@@ -874,5 +879,47 @@ declare module '__cu-core/classes/Ability' {
         static create(): Ability;
     }
     export default Ability;
+}
+
+declare module '__cu-core/classes/Combatant' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    import race from '__cu-core/constants/race';
+    class Combatant {
+        name: string;
+        health: number;
+        maxHealth: number;
+        stamina: number;
+        maxStamina: number;
+        constructor(combatant?: Combatant);
+        setRace(race: race): void;
+        setName(name: string): void;
+        setHealth(health: number, maxHealth: number): void;
+        setStamina(stamina: number, maxStamina: number): void;
+        static create(): Combatant;
+    }
+    export default Combatant;
+}
+
+declare module '__cu-core/classes/Player' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    import Combatant from '__cu-core/classes/Combatant';
+    import race from '__cu-core/constants/race';
+    import archetype from '__cu-core/constants/archetype';
+    class Player extends Combatant {
+        race: race;
+        archetype: archetype;
+        constructor(character?: Player);
+        setRace(race: race): void;
+        static create(): Player;
+    }
+    export default Player;
 }
 

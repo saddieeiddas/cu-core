@@ -5,6 +5,7 @@
  */
 
 enum race {
+  NONE = -1,
   //TUATHA = 0,
   HAMADRYAD = 1,
   LUCHORPAN = 2,

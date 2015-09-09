@@ -5,6 +5,7 @@
  */
 
 import tags from './constants/tags';
+import race from './constants/race';
 
 interface clientInterface {
   // These are the only things that are guaranteed to exist from the time
@@ -153,7 +154,7 @@ interface clientInterface {
 
   OnCharacterIDChanged(c: (id: string) => void): void;
   OnCharacterFactionChanged(c: (faction: number) => void): void;
-  OnCharacterRaceChanged(c: (race: number) => void): void;
+  OnCharacterRaceChanged(c: (race: race) => void): void;
   OnCharacterNameChanged(c: (name: string) => void): void;
   OnCharacterHealthChanged(c: (health: number, maxHealth: number) => void): void;
   OnCharacterStaminaChanged(c: (stamina: number, maxStamina: number) => void): void;

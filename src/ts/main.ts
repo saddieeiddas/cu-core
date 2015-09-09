@@ -24,6 +24,9 @@ import tags from './constants/tags';
 
 // classes
 import Ability from './classes/Ability';
+import Combatant from './classes/Combatant';
+import Player from './classes/Player';
+
 
 export {
   CoreSettings,
@@ -46,4 +49,6 @@ export {
 
   // classes
   Ability,
+  Combatant,
+  Player
 }

@@ -5,6 +5,7 @@
  */
 
 enum archetype {
+  NONE = -1,
   FIREMAGE = 0,
   EARTHMAGE = 1,
   WATERMAGE = 2,
