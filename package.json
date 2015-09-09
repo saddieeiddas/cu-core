@@ -1,11 +1,12 @@
 {
   "name": "cu-core",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Core Camelot Unchained Client Library",
   "license": "MPL-2.0",
   "main": "lib/main.js",
   "contributors": [
-    "codecorsair <jb@codecorsair.com>"
+    "codecorsair <jb@codecorsair.com>",
+    "Mehuge <mehuge@sorcerer.co.uk>"
   ],
   "keywords": [
     "Camelot",
