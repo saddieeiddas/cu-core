@@ -25,9 +25,7 @@ import tags from './constants/tags';
 // classes
 import Ability from './classes/Ability';
 import Combatant from './classes/Combatant';
-import Character from './classes/Character';
-import EnemyTarget from './classes/EnemyTarget';
-import FriendlyTarget from './classes/FriendlyTarget';
+import Player from './classes/Player';
 
 
 export {
@@ -52,7 +50,5 @@ export {
   // classes
   Ability,
   Combatant,
-  Character,
-  EnemyTarget,
-  FriendlyTarget
+  Player
 }

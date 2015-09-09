@@ -7,12 +7,12 @@ import Combatant from './Combatant';
 import race from '../constants/race';
 import archetype from '../constants/archetype';
 
-class Character extends Combatant {
+class Player extends Combatant {
 
   race: race;
   archetype: archetype;
 
-  constructor(character = <Character>{}) {
+  constructor(character = <Player>{}) {
     super(character)
     this.race = character.race || race.NONE;
     this.archetype = character.archetype || archetype.NONE;
@@ -23,10 +23,10 @@ class Character extends Combatant {
   }
 
   static create() {
-    let a = new Character();
+    let a = new Player();
     return a;
   }
 
 }
 
-export default Character;
+export default Player;

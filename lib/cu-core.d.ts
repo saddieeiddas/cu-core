@@ -23,10 +23,8 @@ declare module 'cu-core' {
     import tags from '__cu-core/constants/tags';
     import Ability from '__cu-core/classes/Ability';
     import Combatant from '__cu-core/classes/Combatant';
-    import Character from '__cu-core/classes/Character';
-    import EnemyTarget from '__cu-core/classes/EnemyTarget';
-    import FriendlyTarget from '__cu-core/classes/FriendlyTarget';
-    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Character, EnemyTarget, FriendlyTarget };
+    import Player from '__cu-core/classes/Player';
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -906,7 +904,7 @@ declare module '__cu-core/classes/Combatant' {
     export default Combatant;
 }
 
-declare module '__cu-core/classes/Character' {
+declare module '__cu-core/classes/Player' {
     /**
       * This Source Code Form is subject to the terms of the Mozilla Public
       * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -915,41 +913,13 @@ declare module '__cu-core/classes/Character' {
     import Combatant from '__cu-core/classes/Combatant';
     import race from '__cu-core/constants/race';
     import archetype from '__cu-core/constants/archetype';
-    class Character extends Combatant {
+    class Player extends Combatant {
         race: race;
         archetype: archetype;
-        constructor(character?: Character);
+        constructor(character?: Player);
         setRace(race: race): void;
-        static create(): Character;
+        static create(): Player;
     }
-    export default Character;
-}
-
-declare module '__cu-core/classes/EnemyTarget' {
-    /**
-      * This Source Code Form is subject to the terms of the Mozilla Public
-      * License, v. 2.0. If a copy of the MPL was not distributed with this
-      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
-      */
-    import Combatant from '__cu-core/classes/Combatant';
-    class EnemyTarget extends Combatant {
-        constructor(enemytarget?: EnemyTarget);
-        static create(): EnemyTarget;
-    }
-    export default EnemyTarget;
-}
-
-declare module '__cu-core/classes/FriendlyTarget' {
-    /**
-      * This Source Code Form is subject to the terms of the Mozilla Public
-      * License, v. 2.0. If a copy of the MPL was not distributed with this
-      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
-      */
-    import Combatant from '__cu-core/classes/Combatant';
-    class FriendlyTarget extends Combatant {
-        constructor(friendlytarget?: FriendlyTarget);
-        static create(): FriendlyTarget;
-    }
-    export default FriendlyTarget;
+    export default Player;
 }
 
