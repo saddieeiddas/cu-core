@@ -939,10 +939,12 @@ declare module '__cu-core/classes/Character' {
       */
     import Player from '__cu-core/classes/Player';
     import Inventory from '__cu-core/classes/Inventory';
+    import Equip from '__cu-core/classes/Equip';
     import BanesBoons from '__cu-core/classes/BanesBoons';
     class Character extends Player {
         inventory: Inventory;
         banesboons: BanesBoons;
+        equip: Equip;
         strength: number;
         agility: number;
         endurance: number;

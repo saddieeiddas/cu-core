@@ -5,12 +5,14 @@
  */
 import Player from './Player';
 import Inventory from './Inventory';
+import Equip from './Equip';
 import BanesBoons from './BanesBoons';
 
 class Character extends Player {
     
   inventory: Inventory;
   banesboons: BanesBoons;
+  equip: Equip;
     
   //Primary
   strength: number;
@@ -47,6 +49,7 @@ class Character extends Player {
   constructor(character = <Character>{}) {
     super(character)
       this.inventory = character.inventory || new Inventory;
+      this.equip = character.equip || new Equip;
       this.banesboons = character.banesboons || new BanesBoons;
       
      
