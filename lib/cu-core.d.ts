@@ -196,6 +196,9 @@ declare module '__cu-core/clientInterface' {
         netstats_players_newCount: number;
         netstats_players_newBits: number;
         netstats_lag: number;
+        netstats_delay: number;
+        netstats_selfUpdatesPerSec: number;
+        netstats_syncsPerSec: number;
         particlesRenderedCount: number;
         characters: number;
         terrain: number;

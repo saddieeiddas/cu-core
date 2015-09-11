@@ -9,7 +9,7 @@
  * to send to the window.
  */
 enum tags {
-  KEYBIND =  2,
+  KEYBIND = 2,
   INPUT = 6,
   AUDIO = 8,
 };
