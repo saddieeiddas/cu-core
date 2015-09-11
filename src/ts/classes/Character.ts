@@ -49,7 +49,7 @@ class Character extends Player {
   constructor(character = <Character>{}) {
     super(character)
     this.inventory = character.inventory || new Inventory();
-    this.equippeditems = character.equippeditems || new EquippedItems();
+    this.EquippedItems = character.equippeditems || new EquippedItems();
     this.banesboons = character.banesboons || new BanesBoons();
        
     this.strength = character.strength || 0;
