@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-export interface ControlPoints {
+export interface ControlPoint {
   faction: string;
   id: string;
   size: string;
@@ -15,7 +15,7 @@ export interface ControlPoints {
 class ControlGame {
 
   arthurianScore: number;
-  controlPoints: ControlPoints[];
+  controlPoints: ControlPoint[];
   gameState: number;
   timeLeft: number;
   tuathaDeDanannScore: number;
@@ -35,7 +35,7 @@ class ControlGame {
     this.timeLeft = controlGame.timeLeft || 0;
 
     // Control Points (if included)
-    this.controlPoints = controlGame.controlPoints || null;
+    this.controlPoints = controlGame.controlPoints || <ControlPoint[]>[];
   }
 
   static create() {
