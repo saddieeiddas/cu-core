@@ -5,6 +5,7 @@
  */
 
 import race from '../constants/race';
+import archetype from '../constants/archetype';
 
 class Combatant {
   name: string;
@@ -22,6 +23,7 @@ class Combatant {
   }
 
   setRace(race: race) { } // override to support race
+  setAarchetype(archetype: archetype)  { } /// override to support archetype
 
   setName(name: string) {
     this.name = name;

@@ -29,12 +29,17 @@
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\ts\CoreSettings.ts"/>
+    <TypeScriptCompile Include="src\ts\classes\Ability.ts"/>
+    <TypeScriptCompile Include="src\ts\classes\BanesBoons.ts"/>
+    <TypeScriptCompile Include="src\ts\classes\Character.ts"/>
+    <TypeScriptCompile Include="src\ts\classes\Combatant.ts"/>
+    <TypeScriptCompile Include="src\ts\classes\Equip.ts"/>
+    <TypeScriptCompile Include="src\ts\classes\Inventory.ts"/>
+    <TypeScriptCompile Include="src\ts\classes\Item.ts"/>
+    <TypeScriptCompile Include="src\ts\classes\Player.ts"/>
     <TypeScriptCompile Include="src\ts\client.ts"/>
     <TypeScriptCompile Include="src\ts\clientInterface.ts"/>
-    <TypeScriptCompile Include="src\ts\CoreSettings.ts"/>
-    <TypeScriptCompile Include="src\ts\main.bundle.ts"/>
-    <TypeScriptCompile Include="src\ts\main.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\Ability.ts"/>
     <TypeScriptCompile Include="src\ts\constants\abilityTags.ts"/>
     <TypeScriptCompile Include="src\ts\constants\archetype.ts"/>
     <TypeScriptCompile Include="src\ts\constants\buildUIMode.ts"/>
@@ -47,6 +52,8 @@
     <TypeScriptCompile Include="src\ts\constants\soundEvents.ts"/>
     <TypeScriptCompile Include="src\ts\constants\tagConstraintType.ts"/>
     <TypeScriptCompile Include="src\ts\constants\tags.ts"/>
+    <TypeScriptCompile Include="src\ts\main.bundle.ts"/>
+    <TypeScriptCompile Include="src\ts\main.ts"/>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

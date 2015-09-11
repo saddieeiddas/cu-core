@@ -24,7 +24,12 @@ declare module 'cu-core' {
     import Ability from '__cu-core/classes/Ability';
     import Combatant from '__cu-core/classes/Combatant';
     import Player from '__cu-core/classes/Player';
-    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player };
+    import Character from '__cu-core/classes/Character';
+    import Inventory from '__cu-core/classes/Inventory';
+    import Equip from '__cu-core/classes/Equip';
+    import Item from '__cu-core/classes/Item';
+    import BanesBoons from '__cu-core/classes/BanesBoons';
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player, Character, Inventory, Equip, Item, BanesBoons };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -888,6 +893,7 @@ declare module '__cu-core/classes/Combatant' {
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     import race from '__cu-core/constants/race';
+    import archetype from '__cu-core/constants/archetype';
     class Combatant {
         name: string;
         health: number;
@@ -896,6 +902,7 @@ declare module '__cu-core/classes/Combatant' {
         maxStamina: number;
         constructor(combatant?: Combatant);
         setRace(race: race): void;
+        setAarchetype(archetype: archetype): void;
         setName(name: string): void;
         setHealth(health: number, maxHealth: number): void;
         setStamina(stamina: number, maxStamina: number): void;
@@ -918,8 +925,111 @@ declare module '__cu-core/classes/Player' {
         archetype: archetype;
         constructor(character?: Player);
         setRace(race: race): void;
+        setAarchetype(archetype: archetype): void;
         static create(): Player;
     }
     export default Player;
+}
+
+declare module '__cu-core/classes/Character' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    import Player from '__cu-core/classes/Player';
+    import Inventory from '__cu-core/classes/Inventory';
+    import BanesBoons from '__cu-core/classes/BanesBoons';
+    class Character extends Player {
+        inventory: Inventory;
+        banesboons: BanesBoons;
+        strength: number;
+        agility: number;
+        endurance: number;
+        will: number;
+        resonance: number;
+        dexterity: number;
+        vitality: number;
+        attunement: number;
+        faith: number;
+        eyesight: number;
+        hearing: number;
+        clarity: number;
+        mass: number;
+        presence: number;
+        affinity: number;
+        max_move_speed: number;
+        vision: number;
+        detection: number;
+        carry_capacity: number;
+        max_panix: number;
+        panix_decay: number;
+        max_hp: number;
+        health_regeneration: number;
+        max_stamina: number;
+        stamina_regeneration: number;
+        constructor(character?: Character);
+        static create(): Character;
+    }
+    export default Character;
+}
+
+declare module '__cu-core/classes/Inventory' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    class Inventory {
+        constructor(inventory?: Inventory);
+        static create(): Inventory;
+    }
+    export default Inventory;
+}
+
+declare module '__cu-core/classes/Equip' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    import Item from '__cu-core/classes/Item';
+    class Equip {
+        head: Item;
+        shoulder: Item;
+        right_hand: Item;
+        left_hand: Item;
+        right_arm: Item;
+        left_arm: Item;
+        constructor(equip?: Equip);
+        static create(): Equip;
+    }
+    export default Equip;
+}
+
+declare module '__cu-core/classes/Item' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    class Item {
+        constructor(item?: Item);
+        static create(): Item;
+    }
+    export default Item;
+}
+
+declare module '__cu-core/classes/BanesBoons' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    class BanesBoons {
+        constructor(boonsbanes?: BanesBoons);
+        static create(): BanesBoons;
+    }
+    export default BanesBoons;
 }
 

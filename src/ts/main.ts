@@ -26,7 +26,11 @@ import tags from './constants/tags';
 import Ability from './classes/Ability';
 import Combatant from './classes/Combatant';
 import Player from './classes/Player';
-
+import Character from './classes/Character';
+import Inventory from './classes/Inventory';
+import Equip from './classes/Equip';
+import Item from './classes/Item';
+import BanesBoons from './classes/BanesBoons';
 
 export {
   CoreSettings,
@@ -50,5 +54,10 @@ export {
   // classes
   Ability,
   Combatant,
-  Player
+  Player,
+  Character,
+  Inventory,
+  Equip,
+  Item,
+  BanesBoons
 }
