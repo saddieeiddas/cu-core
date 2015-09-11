@@ -10,15 +10,15 @@ class Population {
   vikings: number;
   max: number;
 
-  constructor(data = <Population>{}) {
+  constructor(population = <Population>{}) {
 
     // Population limit
-    this.max = data.max || 0;
+    this.max = population.max || 0;
 
     // Current Population by realm
-    this.arthurians = data.arthurians || 0;
-    this.tuathaDeDanann = data.tuathaDeDanann || 0;
-    this.vikings = data.vikings || 0;
+    this.arthurians = population.arthurians || 0;
+    this.tuathaDeDanann = population.tuathaDeDanann || 0;
+    this.vikings = population.vikings || 0;
   }
 
   static create() {

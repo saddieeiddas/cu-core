@@ -918,7 +918,7 @@ declare module '__cu-core/classes/Player' {
     class Player extends Combatant {
         race: race;
         archetype: archetype;
-        constructor(character?: Player);
+        constructor(player?: Player);
         setRace(race: race): void;
         static create(): Player;
     }
@@ -926,14 +926,26 @@ declare module '__cu-core/classes/Player' {
 }
 
 declare module '__cu-core/classes/ControlGame' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    export interface ControlPoints {
+        faction: string;
+        id: string;
+        size: string;
+        x: number;
+        y: number;
+    }
     class ControlGame {
         arthurianScore: number;
-        controlPoints: any[];
+        controlPoints: ControlPoints[];
         gameState: number;
         timeLeft: number;
         tuathaDeDanannScore: number;
         vikingScore: number;
-        constructor(data?: ControlGame);
+        constructor(controlGame?: ControlGame);
         static create(): ControlGame;
     }
     export default ControlGame;
@@ -950,7 +962,7 @@ declare module '__cu-core/classes/Population' {
         tuathaDeDanann: number;
         vikings: number;
         max: number;
-        constructor(data?: Population);
+        constructor(population?: Population);
         static create(): Population;
     }
     export default Population;

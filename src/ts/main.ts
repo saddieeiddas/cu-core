@@ -54,5 +54,5 @@ export {
   Combatant,
   Player,
   ControlGame,
-  Population
+  Population,
 }

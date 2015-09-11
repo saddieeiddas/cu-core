@@ -3,33 +3,39 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-import race from '../constants/race';
-import archetype from '../constants/archetype';
+
+export interface ControlPoints {
+  faction: string;
+  id: string;
+  size: string;
+  x: number;
+  y: number;
+};
 
 class ControlGame {
 
   arthurianScore: number;
-  controlPoints: any[];
+  controlPoints: ControlPoints[];
   gameState: number;
   timeLeft: number;
   tuathaDeDanannScore: number;
   vikingScore: number;
 
-  constructor(data = <ControlGame>{}) {
+  constructor(controlGame = <ControlGame>{}) {
 
     // Game State
-    this.gameState = data.gameState || 0;
+    this.gameState = controlGame.gameState || 0;
 
     // Game Score
-    this.arthurianScore = data.arthurianScore || 0;
-    this.tuathaDeDanannScore = data.tuathaDeDanannScore || 0;
-    this.vikingScore = data.vikingScore || 0;
+    this.arthurianScore = controlGame.arthurianScore || 0;
+    this.tuathaDeDanannScore = controlGame.tuathaDeDanannScore || 0;
+    this.vikingScore = controlGame.vikingScore || 0;
 
     // Time remaining
-    this.timeLeft = data.timeLeft || 0;
+    this.timeLeft = controlGame.timeLeft || 0;
 
     // Control Points (if included)
-    this.controlPoints = data.controlPoints || null;
+    this.controlPoints = controlGame.controlPoints || null;
   }
 
   static create() {
