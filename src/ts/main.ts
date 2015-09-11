@@ -21,6 +21,7 @@ import race from './constants/race';
 import soundEvents from './constants/soundEvents';
 import tagConstraintType from './constants/tagConstraintType';
 import tags from './constants/tags';
+import baneBoonCategory from './constants/baneBoonCategory';
 
 // classes
 import Ability from './classes/Ability';
@@ -28,7 +29,7 @@ import Combatant from './classes/Combatant';
 import Player from './classes/Player';
 import Character from './classes/Character';
 import Inventory from './classes/Inventory';
-import Equip from './classes/Equip';
+import EquippedItems from './classes/EquippedItems';
 import Item from './classes/Item';
 import BanesBoons from './classes/BanesBoons';
 
@@ -57,7 +58,7 @@ export {
   Player,
   Character,
   Inventory,
-  Equip,
+  EquippedItems,
   Item,
   BanesBoons
 }

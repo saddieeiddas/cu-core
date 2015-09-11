@@ -5,14 +5,14 @@
  */
 import Player from './Player';
 import Inventory from './Inventory';
-import Equip from './Equip';
+import EquippedItems from './EquippedItems';
 import BanesBoons from './BanesBoons';
 
 class Character extends Player {
     
   inventory: Inventory;
   banesboons: BanesBoons;
-  equip: Equip;
+  equippeditems: EquippedItems;
     
   //Primary
   strength: number;
@@ -48,38 +48,37 @@ class Character extends Player {
 
   constructor(character = <Character>{}) {
     super(character)
-      this.inventory = character.inventory || new Inventory;
-      this.equip = character.equip || new Equip;
-      this.banesboons = character.banesboons || new BanesBoons;
-      
-     
-      this.strength = character.strength || 0;
-      this.agility = character.agility || 0;
-      this.endurance = character.endurance || 0;
-      this.will = character.will || 0;
-      this.resonance = character.resonance || 0;
-      this.dexterity = character.dexterity || 0;
-      this.vitality = character.vitality || 0;
-      this.attunement = character.attunement || 0;
-      this.faith = character.faith || 0;
-      this.eyesight = character.eyesight || 0;
-      
-      this.hearing = character.hearing || 0;
-      this.clarity = character.clarity || 0;
-      this.mass = character.mass || 0;
-      this.presence = character.presence || 0;
-      this.affinity = character.affinity || 0;
-      
-      this.maxMoveSpeed = character.maxMoveSpeed || 0;
-      this.vision = character.vision || 0;
-      this.detection = character.detection || 0;
-      this.carryCapacity = character.carryCapacity || 0;
-      this.maxPanic = character.maxPanic || 0;
-      this.panixDecay = character.panixDecay || 0;
-      this.maxHp = character.maxHp || 0;
-      this.healthRegeneration = character.healthRegeneration || 0;
-      this.maxStamina = character.maxStamina || 0;
-      this.staminaRegeneration = character.staminaRegeneration || 0;
+    this.inventory = character.inventory || new Inventory();
+    this.equippeditems = character.equippeditems || new EquippedItems();
+    this.banesboons = character.banesboons || new BanesBoons();
+       
+    this.strength = character.strength || 0;
+    this.agility = character.agility || 0;
+    this.endurance = character.endurance || 0;
+    this.will = character.will || 0;
+    this.resonance = character.resonance || 0;
+    this.dexterity = character.dexterity || 0;
+    this.vitality = character.vitality || 0;
+    this.attunement = character.attunement || 0;
+    this.faith = character.faith || 0;
+    this.eyesight = character.eyesight || 0;
+    
+    this.hearing = character.hearing || 0;
+    this.clarity = character.clarity || 0;
+    this.mass = character.mass || 0;
+    this.presence = character.presence || 0;
+    this.affinity = character.affinity || 0;
+    
+    this.maxMoveSpeed = character.maxMoveSpeed || 0;
+    this.vision = character.vision || 0;
+    this.detection = character.detection || 0;
+    this.carryCapacity = character.carryCapacity || 0;
+    this.maxPanic = character.maxPanic || 0;
+    this.panixDecay = character.panixDecay || 0;
+    this.maxHp = character.maxHp || 0;
+    this.healthRegeneration = character.healthRegeneration || 0;
+    this.maxStamina = character.maxStamina || 0;
+    this.staminaRegeneration = character.staminaRegeneration || 0;
 
   }
 

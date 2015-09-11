@@ -22,7 +22,7 @@ class Player extends Combatant {
     this.race = race;
   }
     
-  setAarchetype(archetype: archetype) {
+  setArchetype(archetype: archetype) {
     this.archetype = archetype;
   }
 

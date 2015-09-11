@@ -26,10 +26,10 @@ declare module 'cu-core' {
     import Player from '__cu-core/classes/Player';
     import Character from '__cu-core/classes/Character';
     import Inventory from '__cu-core/classes/Inventory';
-    import Equip from '__cu-core/classes/Equip';
+    import EquippedItems from '__cu-core/classes/EquippedItems';
     import Item from '__cu-core/classes/Item';
     import BanesBoons from '__cu-core/classes/BanesBoons';
-    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player, Character, Inventory, Equip, Item, BanesBoons };
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player, Character, Inventory, EquippedItems, Item, BanesBoons };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -346,6 +346,7 @@ declare module '__cu-core/constants/channelId' {
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     enum channelId {
+        NONE = -1,
         HATCHERY = 4,
         WYRMLING = 10,
     }
@@ -902,7 +903,7 @@ declare module '__cu-core/classes/Combatant' {
         maxStamina: number;
         constructor(combatant?: Combatant);
         setRace(race: race): void;
-        setAarchetype(archetype: archetype): void;
+        setArchetype(archetype: archetype): void;
         setName(name: string): void;
         setHealth(health: number, maxHealth: number): void;
         setStamina(stamina: number, maxStamina: number): void;
@@ -925,7 +926,7 @@ declare module '__cu-core/classes/Player' {
         archetype: archetype;
         constructor(character?: Player);
         setRace(race: race): void;
-        setAarchetype(archetype: archetype): void;
+        setArchetype(archetype: archetype): void;
         static create(): Player;
     }
     export default Player;
@@ -939,12 +940,12 @@ declare module '__cu-core/classes/Character' {
       */
     import Player from '__cu-core/classes/Player';
     import Inventory from '__cu-core/classes/Inventory';
-    import Equip from '__cu-core/classes/Equip';
+    import EquippedItems from '__cu-core/classes/EquippedItems';
     import BanesBoons from '__cu-core/classes/BanesBoons';
     class Character extends Player {
         inventory: Inventory;
         banesboons: BanesBoons;
-        equip: Equip;
+        equippeditems: EquippedItems;
         strength: number;
         agility: number;
         endurance: number;
@@ -989,24 +990,26 @@ declare module '__cu-core/classes/Inventory' {
     export default Inventory;
 }
 
-declare module '__cu-core/classes/Equip' {
+declare module '__cu-core/classes/EquippedItems' {
     /**
       * This Source Code Form is subject to the terms of the Mozilla Public
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     import Item from '__cu-core/classes/Item';
-    class Equip {
-        head: Item;
-        shoulder: Item;
-        rightHand: Item;
+    class EquippedItems {
+        chest: Item;
         leftHand: Item;
-        rightArm: Item;
-        leftArm: Item;
-        constructor(equip?: Equip);
-        static create(): Equip;
+        rightHand: Item;
+        pants: Item;
+        boots: Item;
+        leftGlove: Item;
+        rightGlove: Item;
+        helmet: Item;
+        constructor(equippeditems?: EquippedItems);
+        static create(): EquippedItems;
     }
-    export default Equip;
+    export default EquippedItems;
 }
 
 declare module '__cu-core/classes/Item' {
@@ -1028,10 +1031,40 @@ declare module '__cu-core/classes/BanesBoons' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
+    import channelId from '__cu-core/constants/channelId';
+    import baneBoonCategory from '__cu-core/constants/baneBoonCategory';
     class BanesBoons {
+        id: string;
+        channelId: channelId;
+        name: string;
+        description: string;
+        category: baneBoonCategory;
+        categoryId: number;
+        icon: string;
+        costPerRank: number;
+        maxRanks: number;
+        prerequisite: string;
+        x: number;
+        y: number;
         constructor(boonsbanes?: BanesBoons);
         static create(): BanesBoons;
     }
     export default BanesBoons;
+}
+
+declare module '__cu-core/constants/baneBoonCategory' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    enum baneBoonCategory {
+        NONE = -1,
+        GENERAL = 1,
+        FACTION = 2,
+        RACE = 3,
+        ARCHTYPE = 4,
+    }
+    export default baneBoonCategory;
 }
 

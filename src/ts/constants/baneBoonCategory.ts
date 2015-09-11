@@ -4,10 +4,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-enum channelId {
-  NONE = -1,
-  HATCHERY = 4,
-  WYRMLING = 10
-};
+enum baneBoonCategory {
+    NONE = -1,
+    GENERAL = 1,
+    FACTION = 2,
+    RACE = 3,
+    ARCHTYPE = 4
+    };
 
-export default channelId;
+export default baneBoonCategory;

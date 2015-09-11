@@ -29,31 +29,32 @@
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\ts\CoreSettings.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\Ability.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\BanesBoons.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\Character.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\Combatant.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\Equip.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\Inventory.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\Item.ts"/>
-    <TypeScriptCompile Include="src\ts\classes\Player.ts"/>
-    <TypeScriptCompile Include="src\ts\client.ts"/>
-    <TypeScriptCompile Include="src\ts\clientInterface.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\abilityTags.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\archetype.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\buildUIMode.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\channelId.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\dxKeyCodes.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\emotes.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\jsKeyCodes.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\jsToDXKeyCodeMap.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\race.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\soundEvents.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\tagConstraintType.ts"/>
-    <TypeScriptCompile Include="src\ts\constants\tags.ts"/>
-    <TypeScriptCompile Include="src\ts\main.bundle.ts"/>
-    <TypeScriptCompile Include="src\ts\main.ts"/>
+    <TypeScriptCompile Include="src/ts/CoreSettings.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/Ability.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/BanesBoons.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/Character.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/Combatant.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/EquippedItems.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/Inventory.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/Item.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/Player.ts"/>
+    <TypeScriptCompile Include="src/ts/client.ts"/>
+    <TypeScriptCompile Include="src/ts/clientInterface.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/abilityTags.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/archetype.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/baneBoonCategory.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/buildUIMode.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/channelId.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/dxKeyCodes.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/emotes.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/jsKeyCodes.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/jsToDXKeyCodeMap.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/race.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/soundEvents.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/tagConstraintType.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/tags.ts"/>
+    <TypeScriptCompile Include="src/ts/main.bundle.ts"/>
+    <TypeScriptCompile Include="src/ts/main.ts"/>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
