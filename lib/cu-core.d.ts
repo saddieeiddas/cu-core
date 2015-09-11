@@ -958,16 +958,16 @@ declare module '__cu-core/classes/Character' {
         mass: number;
         presence: number;
         affinity: number;
-        max_move_speed: number;
+        maxMoveSpeed: number;
         vision: number;
         detection: number;
-        carry_capacity: number;
-        max_panix: number;
-        panix_decay: number;
-        max_hp: number;
-        health_regeneration: number;
-        max_stamina: number;
-        stamina_regeneration: number;
+        carryCapacity: number;
+        maxPanic: number;
+        panixDecay: number;
+        maxHp: number;
+        healthRegeneration: number;
+        maxStamina: number;
+        staminaRegeneration: number;
         constructor(character?: Character);
         static create(): Character;
     }
@@ -997,10 +997,10 @@ declare module '__cu-core/classes/Equip' {
     class Equip {
         head: Item;
         shoulder: Item;
-        right_hand: Item;
-        left_hand: Item;
-        right_arm: Item;
-        left_arm: Item;
+        rightHand: Item;
+        leftHand: Item;
+        rightArm: Item;
+        leftArm: Item;
         constructor(equip?: Equip);
         static create(): Equip;
     }

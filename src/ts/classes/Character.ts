@@ -32,16 +32,16 @@ class Character extends Player {
   affinity: number;
     
   //Derived
-  max_move_speed: number;
+  maxMoveSpeed: number;
   vision: number;
   detection: number;
-  carry_capacity: number;
-  max_panix: number;
-  panix_decay: number;
-  max_hp: number;
-  health_regeneration: number;
-  max_stamina: number;
-  stamina_regeneration: number;
+  carryCapacity: number;
+  maxPanic: number;
+  panixDecay: number;
+  maxHp: number;
+  healthRegeneration: number;
+  maxStamina: number;
+  staminaRegeneration: number;
   
 
   constructor(character = <Character>{}) {
@@ -67,16 +67,16 @@ class Character extends Player {
       this.presence = character.presence || 0;
       this.affinity = character.affinity || 0;
       
-      this.max_move_speed = character.max_move_speed || 0;
+      this.maxMoveSpeed = character.maxMoveSpeed || 0;
       this.vision = character.vision || 0;
       this.detection = character.detection || 0;
-      this.carry_capacity = character.carry_capacity || 0;
-      this.max_panix = character.max_panix || 0;
-      this.panix_decay = character.panix_decay || 0;
-      this.max_hp = character.max_hp || 0;
-      this.health_regeneration = character.health_regeneration || 0;
-      this.max_stamina = character.max_stamina || 0;
-      this.stamina_regeneration = character.stamina_regeneration || 0;
+      this.carryCapacity = character.carryCapacity || 0;
+      this.maxPanic = character.maxPanic || 0;
+      this.panixDecay = character.panixDecay || 0;
+      this.maxHp = character.maxHp || 0;
+      this.healthRegeneration = character.healthRegeneration || 0;
+      this.maxStamina = character.maxStamina || 0;
+      this.staminaRegeneration = character.staminaRegeneration || 0;
 
   }
 

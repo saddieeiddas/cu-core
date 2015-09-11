@@ -9,18 +9,20 @@ class Equip  {
     
   head: Item;
   shoulder: Item;
-  right_hand: Item;
-  left_hand: Item;
-  right_arm: Item;
-  left_arm: Item;
+  rightHand: Item;
+  leftHand: Item;
+  rightArm: Item;
+  leftArm: Item;
+    
+  //TODO add all the others
     
   constructor(equip = <Equip>{}) {
       this.head = equip.head ||  null;
       this.shoulder = equip.shoulder ||  null;
-      this.right_hand = equip.right_hand ||  null;
-      this.left_hand = equip.left_hand ||  null;
-      this.right_arm = equip.right_arm ||  null;
-      this.left_arm = equip.left_arm ||  null;
+      this.rightHand = equip.rightHand ||  null;
+      this.leftHand = equip.leftHand ||  null;
+      this.rightArm = equip.rightArm ||  null;
+      this.leftArm = equip.leftArm ||  null;
   }
 
   static create() {
