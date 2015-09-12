@@ -6,10 +6,10 @@
 import Item from './Item';
 
 class Inventory  {
-  items: any[];
+  items: Item[];
 
   constructor(inventory = <Inventory>{}) {
-    this.items = inventory.items || []
+    this.items = inventory.items ||  <Item[]>[];
   }
 
   static create() {

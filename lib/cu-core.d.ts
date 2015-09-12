@@ -973,10 +973,11 @@ declare module '__cu-core/classes/Character' {
     import Player from '__cu-core/classes/Player';
     import Inventory from '__cu-core/classes/Inventory';
     import EquippedItems from '__cu-core/classes/EquippedItems';
+    import BaneBoon from '__cu-core/classes/BaneBoon';
     class Character extends Player {
         inventory: Inventory;
-        banes: any[];
-        boons: any[];
+        banes: BaneBoon[];
+        boons: BaneBoon[];
         equippedItems: EquippedItems;
         strength: number;
         agility: number;
@@ -1010,8 +1011,14 @@ declare module '__cu-core/classes/Character' {
 }
 
 declare module '__cu-core/classes/Inventory' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    import Item from '__cu-core/classes/Item';
     class Inventory {
-        items: any[];
+        items: Item[];
         constructor(inventory?: Inventory);
         static create(): Inventory;
     }

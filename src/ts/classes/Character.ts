@@ -11,8 +11,8 @@ import BaneBoon from './BaneBoon';
 class Character extends Player {
 
   inventory: Inventory;
-  banes: any[];
-  boons: any[];
+  banes: BaneBoon[];
+  boons: BaneBoon[];
   equippedItems: EquippedItems;
 
   //Primary
@@ -51,8 +51,8 @@ class Character extends Player {
     super(character)
     this.inventory = character.inventory || new Inventory();
     this.equippedItems = character.equippedItems || new EquippedItems();
-    this.banes = character.banes || [];
-    this.banes = character.boons || [];
+    this.banes = character.banes ||  <BaneBoon[]>[];
+    this.banes = character.boons ||  <BaneBoon[]>[];
 
     this.strength = character.strength || 0;
     this.agility = character.agility || 0;
