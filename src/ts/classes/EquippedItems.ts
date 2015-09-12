@@ -5,17 +5,18 @@
  */
 import Item from './Item';
 
-class EquippedItems  { 
+class EquippedItems  {
 
+  helmet: Item;
   chest: Item;
-  leftHand: Item;
-  rightHand: Item;
   pants: Item;
   boots: Item;
+  leftHand: Item;
+  rightHand: Item;
   leftGlove: Item;
   rightGlove: Item;
-  helmet: Item;
-    
+
+
   constructor(equippeditems = <EquippedItems>{}) {
     this.helmet = equippeditems.helmet ||  null;
     this.chest = equippeditems.chest ||  null;

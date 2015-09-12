@@ -21,6 +21,8 @@ declare module 'cu-core' {
     import soundEvents from '__cu-core/constants/soundEvents';
     import tagConstraintType from '__cu-core/constants/tagConstraintType';
     import tags from '__cu-core/constants/tags';
+    import baneBoonCategory from '__cu-core/constants/baneBoonCategory';
+    import itemType from '__cu-core/constants/itemType';
     import Ability from '__cu-core/classes/Ability';
     import Combatant from '__cu-core/classes/Combatant';
     import Player from '__cu-core/classes/Player';
@@ -28,8 +30,8 @@ declare module 'cu-core' {
     import Inventory from '__cu-core/classes/Inventory';
     import EquippedItems from '__cu-core/classes/EquippedItems';
     import Item from '__cu-core/classes/Item';
-    import BanesBoons from '__cu-core/classes/BanesBoons';
-    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player, Character, Inventory, EquippedItems, Item, BanesBoons };
+    import BaneBoon from '__cu-core/classes/BaneBoon';
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, baneBoonCategory, itemType, Ability, Combatant, Player, Character, Inventory, EquippedItems, Item, BaneBoon };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -863,6 +865,36 @@ declare module '__cu-core/constants/tags' {
     export default tags;
 }
 
+declare module '__cu-core/constants/baneBoonCategory' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    enum baneBoonCategory {
+        NONE = -1,
+        GENERAL = 1,
+        FACTION = 2,
+        RACE = 3,
+        ARCHETYPE = 4,
+    }
+    export default baneBoonCategory;
+}
+
+declare module '__cu-core/constants/itemType' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    enum itemType {
+        NONE = 0,
+        EQUIPABLE = 1,
+        RESOURCE = 2,
+    }
+    export default itemType;
+}
+
 declare module '__cu-core/classes/Ability' {
     /**
       * This Source Code Form is subject to the terms of the Mozilla Public
@@ -941,11 +973,11 @@ declare module '__cu-core/classes/Character' {
     import Player from '__cu-core/classes/Player';
     import Inventory from '__cu-core/classes/Inventory';
     import EquippedItems from '__cu-core/classes/EquippedItems';
-    import BanesBoons from '__cu-core/classes/BanesBoons';
     class Character extends Player {
         inventory: Inventory;
-        banesboons: BanesBoons;
-        equippeditems: EquippedItems;
+        banes: any[];
+        boons: any[];
+        equippedItems: EquippedItems;
         strength: number;
         agility: number;
         endurance: number;
@@ -978,12 +1010,8 @@ declare module '__cu-core/classes/Character' {
 }
 
 declare module '__cu-core/classes/Inventory' {
-    /**
-      * This Source Code Form is subject to the terms of the Mozilla Public
-      * License, v. 2.0. If a copy of the MPL was not distributed with this
-      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
-      */
     class Inventory {
+        items: any[];
         constructor(inventory?: Inventory);
         static create(): Inventory;
     }
@@ -998,14 +1026,14 @@ declare module '__cu-core/classes/EquippedItems' {
       */
     import Item from '__cu-core/classes/Item';
     class EquippedItems {
+        helmet: Item;
         chest: Item;
-        leftHand: Item;
-        rightHand: Item;
         pants: Item;
         boots: Item;
+        leftHand: Item;
+        rightHand: Item;
         leftGlove: Item;
         rightGlove: Item;
-        helmet: Item;
         constructor(equippeditems?: EquippedItems);
         static create(): EquippedItems;
     }
@@ -1018,14 +1046,20 @@ declare module '__cu-core/classes/Item' {
       * License, v. 2.0. If a copy of the MPL was not distributed with this
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
+    import itemType from '__cu-core/constants/itemType';
     class Item {
+        id: string;
+        type: itemType;
+        name: string;
+        description: string;
+        resourceId: number;
         constructor(item?: Item);
         static create(): Item;
     }
     export default Item;
 }
 
-declare module '__cu-core/classes/BanesBoons' {
+declare module '__cu-core/classes/BaneBoon' {
     /**
       * This Source Code Form is subject to the terms of the Mozilla Public
       * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -1033,7 +1067,7 @@ declare module '__cu-core/classes/BanesBoons' {
       */
     import channelId from '__cu-core/constants/channelId';
     import baneBoonCategory from '__cu-core/constants/baneBoonCategory';
-    class BanesBoons {
+    class BaneBoon {
         id: string;
         channelId: channelId;
         name: string;
@@ -1046,25 +1080,9 @@ declare module '__cu-core/classes/BanesBoons' {
         prerequisite: string;
         x: number;
         y: number;
-        constructor(boonsbanes?: BanesBoons);
-        static create(): BanesBoons;
+        constructor(boonbane?: BaneBoon);
+        static create(): BaneBoon;
     }
-    export default BanesBoons;
-}
-
-declare module '__cu-core/constants/baneBoonCategory' {
-    /**
-      * This Source Code Form is subject to the terms of the Mozilla Public
-      * License, v. 2.0. If a copy of the MPL was not distributed with this
-      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
-      */
-    enum baneBoonCategory {
-        NONE = -1,
-        GENERAL = 1,
-        FACTION = 2,
-        RACE = 3,
-        ARCHTYPE = 4,
-    }
-    export default baneBoonCategory;
+    export default BaneBoon;
 }
 

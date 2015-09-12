@@ -22,6 +22,7 @@ import soundEvents from './constants/soundEvents';
 import tagConstraintType from './constants/tagConstraintType';
 import tags from './constants/tags';
 import baneBoonCategory from './constants/baneBoonCategory';
+import itemType from './constants/itemType';
 
 // classes
 import Ability from './classes/Ability';
@@ -31,7 +32,7 @@ import Character from './classes/Character';
 import Inventory from './classes/Inventory';
 import EquippedItems from './classes/EquippedItems';
 import Item from './classes/Item';
-import BanesBoons from './classes/BanesBoons';
+import BaneBoon from './classes/BaneBoon';
 
 export {
   CoreSettings,
@@ -51,6 +52,8 @@ export {
   soundEvents,
   tagConstraintType,
   tags,
+  baneBoonCategory,
+  itemType,
 
   // classes
   Ability,
@@ -60,5 +63,5 @@ export {
   Inventory,
   EquippedItems,
   Item,
-  BanesBoons
+  BaneBoon
 }

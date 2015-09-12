@@ -4,12 +4,10 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-enum baneBoonCategory {
-  NONE = -1,
-  GENERAL = 1,
-  FACTION = 2,
-  RACE = 3,
-  ARCHETYPE = 4
+enum itemType {
+  NONE = 0,
+  EQUIPABLE = 1 << 0,
+  RESOURCE = 1 << 1
 };
 
-export default baneBoonCategory;
+export default itemType;

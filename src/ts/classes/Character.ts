@@ -6,14 +6,15 @@
 import Player from './Player';
 import Inventory from './Inventory';
 import EquippedItems from './EquippedItems';
-import BanesBoons from './BanesBoons';
+import BaneBoon from './BaneBoon';
 
 class Character extends Player {
-    
+
   inventory: Inventory;
-  banesboons: BanesBoons;
-  equippeditems: EquippedItems;
-    
+  banes: any[];
+  boons: any[];
+  equippedItems: EquippedItems;
+
   //Primary
   strength: number;
   agility: number;
@@ -25,14 +26,14 @@ class Character extends Player {
   attunement: number;
   faith: number;
   eyesight: number;
-    
+
   //Secondary
   hearing: number;
   clarity: number;
   mass: number;
   presence: number;
   affinity: number;
-    
+
   //Derived
   maxMoveSpeed: number;
   vision: number;
@@ -44,14 +45,15 @@ class Character extends Player {
   healthRegeneration: number;
   maxStamina: number;
   staminaRegeneration: number;
-  
+
 
   constructor(character = <Character>{}) {
     super(character)
     this.inventory = character.inventory || new Inventory();
-    this.EquippedItems = character.equippeditems || new EquippedItems();
-    this.banesboons = character.banesboons || new BanesBoons();
-       
+    this.equippedItems = character.equippedItems || new EquippedItems();
+    this.banes = character.banes || [];
+    this.banes = character.boons || [];
+
     this.strength = character.strength || 0;
     this.agility = character.agility || 0;
     this.endurance = character.endurance || 0;
@@ -62,13 +64,13 @@ class Character extends Player {
     this.attunement = character.attunement || 0;
     this.faith = character.faith || 0;
     this.eyesight = character.eyesight || 0;
-    
+
     this.hearing = character.hearing || 0;
     this.clarity = character.clarity || 0;
     this.mass = character.mass || 0;
     this.presence = character.presence || 0;
     this.affinity = character.affinity || 0;
-    
+
     this.maxMoveSpeed = character.maxMoveSpeed || 0;
     this.vision = character.vision || 0;
     this.detection = character.detection || 0;

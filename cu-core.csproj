@@ -31,7 +31,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="src/ts/CoreSettings.ts"/>
     <TypeScriptCompile Include="src/ts/classes/Ability.ts"/>
-    <TypeScriptCompile Include="src/ts/classes/BanesBoons.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/BaneBoon.ts"/>
     <TypeScriptCompile Include="src/ts/classes/Character.ts"/>
     <TypeScriptCompile Include="src/ts/classes/Combatant.ts"/>
     <TypeScriptCompile Include="src/ts/classes/EquippedItems.ts"/>
@@ -47,6 +47,7 @@
     <TypeScriptCompile Include="src/ts/constants/channelId.ts"/>
     <TypeScriptCompile Include="src/ts/constants/dxKeyCodes.ts"/>
     <TypeScriptCompile Include="src/ts/constants/emotes.ts"/>
+    <TypeScriptCompile Include="src/ts/constants/itemType.ts"/>
     <TypeScriptCompile Include="src/ts/constants/jsKeyCodes.ts"/>
     <TypeScriptCompile Include="src/ts/constants/jsToDXKeyCodeMap.ts"/>
     <TypeScriptCompile Include="src/ts/constants/race.ts"/>
