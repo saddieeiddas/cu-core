@@ -24,7 +24,9 @@ declare module 'cu-core' {
     import Ability from '__cu-core/classes/Ability';
     import Combatant from '__cu-core/classes/Combatant';
     import Player from '__cu-core/classes/Player';
-    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player };
+    import ControlGame from '__cu-core/classes/ControlGame';
+    import Population from '__cu-core/classes/Population';
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, Ability, Combatant, Player, ControlGame, Population };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -919,10 +921,53 @@ declare module '__cu-core/classes/Player' {
     class Player extends Combatant {
         race: race;
         archetype: archetype;
-        constructor(character?: Player);
+        constructor(player?: Player);
         setRace(race: race): void;
         static create(): Player;
     }
     export default Player;
+}
+
+declare module '__cu-core/classes/ControlGame' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    export interface ControlPoint {
+        faction: string;
+        id: string;
+        size: string;
+        x: number;
+        y: number;
+    }
+    class ControlGame {
+        arthurianScore: number;
+        controlPoints: ControlPoint[];
+        gameState: number;
+        timeLeft: number;
+        tuathaDeDanannScore: number;
+        vikingScore: number;
+        constructor(controlGame?: ControlGame);
+        static create(): ControlGame;
+    }
+    export default ControlGame;
+}
+
+declare module '__cu-core/classes/Population' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    class Population {
+        arthurians: number;
+        tuathaDeDanann: number;
+        vikings: number;
+        max: number;
+        constructor(population?: Population);
+        static create(): Population;
+    }
+    export default Population;
 }
 

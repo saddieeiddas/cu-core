@@ -12,10 +12,10 @@ class Player extends Combatant {
   race: race;
   archetype: archetype;
 
-  constructor(character = <Player>{}) {
-    super(character)
-    this.race = character.race || race.NONE;
-    this.archetype = character.archetype || archetype.NONE;
+  constructor(player = <Player>{}) {
+    super(player)
+    this.race = player.race || race.NONE;
+    this.archetype = player.archetype || archetype.NONE;
   }
 
   setRace(race: race) {

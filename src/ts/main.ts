@@ -26,6 +26,8 @@ import tags from './constants/tags';
 import Ability from './classes/Ability';
 import Combatant from './classes/Combatant';
 import Player from './classes/Player';
+import ControlGame from './classes/ControlGame';
+import Population from './classes/Population';
 
 
 export {
@@ -50,5 +52,7 @@ export {
   // classes
   Ability,
   Combatant,
-  Player
+  Player,
+  ControlGame,
+  Population,
 }
