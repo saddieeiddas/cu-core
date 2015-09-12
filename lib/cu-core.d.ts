@@ -794,13 +794,32 @@ declare module '__cu-core/constants/soundEvents' {
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     const soundEvents: {
+        CANCEL_ABILITY: number;
+        LOCAL_PLAYER_BEGIN_CAST: number;
+        LOCAL_PLAYER_BEGIN_SWING: number;
+        LOCAL_PLAYER_DEATH: number;
+        LOCAL_PLAYER_SPAWN: number;
+        LOCAL_PLAYER_TOOK_DAMAGE: number;
+        PLAY_FOOTSTEP_LEATHERBOOT_DIRT: number;
+        PLAY_FOOTSTEP_METALBOOT_DIRT: number;
+        PLAY_FOOTSTEP_METALBOOT_WITHMETALARMOR_DIRT: number;
+        PLAY_GENERIC_PROJECTILE: number;
+        PLAY_GENERIC_PROJECTILE_HIT: number;
+        PLAY_INSTRUMENT_ALBION_HORNBASSMOD_LONG_DISTANT_C3_MEDIUMV: number;
         PLAY_LOADINGSCREEN: number;
         PLAY_LOADINGSCREEN_COMPLETE: number;
-        PLAY_MAGIC_HEALING_BANDAGE_END: number;
-        PLAY_MAGIC_HEALING_BANDAGE_START: number;
         PLAY_MAINMENU: number;
-        PLAY_MUSIC_MAINMENU: number;
-        PLAY_MUSIC_MAINMENU_NONSTREAMING: number;
+        PLAY_MELEE_IMPACT: number;
+        PLAY_NATUREAMBIENCE: number;
+        PLAY_SFX_ABILITY_ACTIVATE_SWOOSH_LOCALPLAYER: number;
+        PLAY_SFX_ABILITY_CHARGING_LOOP: number;
+        PLAY_SFX_ABILITY_CONE_STONE_ACTIVATE: number;
+        PLAY_SFX_ABILITY_DART_STONE_ACTIVATE: number;
+        PLAY_SFX_ABILITY_DIRECT_STONE_ACTIVATE: number;
+        PLAY_SFX_ABILITY_HEALING_BANDAGE_END: number;
+        PLAY_SFX_ABILITY_HEALING_BANDAGE_START: number;
+        PLAY_SFX_ABILITY_TOUCH_STONE_ACTIVATE: number;
+        PLAY_SFX_ABILITY_WAVE_STONE_ACTIVATE: number;
         PLAY_UI_ABILITYCRAFTING_ADDSELECTION: number;
         PLAY_UI_ABILITYCRAFTING_BUILD: number;
         PLAY_UI_ABILITYCRAFTING_RESET: number;
@@ -823,6 +842,11 @@ declare module '__cu-core/constants/soundEvents' {
         PLAY_UI_SPELLBOOK_PAGEFLIP_BACKWARD: number;
         PLAY_UI_SPELLBOOK_PAGEFLIP_FORWARD: number;
         PLAY_UI_SPELLBOOK_PUTAWAY: number;
+        PLAYER_BEGIN_CAST: number;
+        PLAYER_BEGIN_SWING: number;
+        PLAYER_DEATH: number;
+        PLAYER_SPAWN: number;
+        PLAYER_TOOK_DAMAGE: number;
         SET_STATE_CHARACTERCREATION_ATTRIBUTES: number;
         SET_STATE_CHARACTERCREATION_BOONSANDBANES: number;
         SET_STATE_CHARACTERCREATION_PREVIEW_ARTHURIAN: number;
