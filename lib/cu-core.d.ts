@@ -31,7 +31,9 @@ declare module 'cu-core' {
     import EquippedItems from '__cu-core/classes/EquippedItems';
     import Item from '__cu-core/classes/Item';
     import BaneBoon from '__cu-core/classes/BaneBoon';
-    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, baneBoonCategory, itemType, Ability, Combatant, Player, Character, Inventory, EquippedItems, Item, BaneBoon };
+    import Spellbook from '__cu-core/classes/Spellbook';
+    import Group from '__cu-core/classes/Group';
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, baneBoonCategory, itemType, Ability, Combatant, Player, Character, Inventory, EquippedItems, Item, BaneBoon, Spellbook, Group };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -974,11 +976,15 @@ declare module '__cu-core/classes/Character' {
     import Inventory from '__cu-core/classes/Inventory';
     import EquippedItems from '__cu-core/classes/EquippedItems';
     import BaneBoon from '__cu-core/classes/BaneBoon';
+    import SpellBook from '__cu-core/classes/SpellBook';
+    import Group from '__cu-core/classes/Group';
     class Character extends Player {
         inventory: Inventory;
         banes: BaneBoon[];
         boons: BaneBoon[];
         equippedItems: EquippedItems;
+        spellBook: SpellBook;
+        group: Group;
         strength: number;
         agility: number;
         endurance: number;
@@ -1092,4 +1098,47 @@ declare module '__cu-core/classes/BaneBoon' {
     }
     export default BaneBoon;
 }
+
+declare module '__cu-core/classes/Spellbook' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    import Ability from '__cu-core/classes/Ability';
+    class Spellbook {
+        abilities: Ability[];
+        constructor(spellbook?: Spellbook);
+        static create(): Spellbook;
+    }
+    export default Spellbook;
+}
+
+declare module '__cu-core/classes/Group' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    import Player from '__cu-core/classes/Player';
+    class Group {
+        members: Player[];
+        constructor(group?: Group);
+        static create(): Group;
+    }
+    export default Group;
+}
+
+/**
+  * This Source Code Form is subject to the terms of the Mozilla Public
+  * License, v. 2.0. If a copy of the MPL was not distributed with this
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  */
+import Ability from '__cu-core/classes/Ability';
+declare class Spellbook {
+    abilities: Ability[];
+    constructor(spellbook?: Spellbook);
+    static create(): Spellbook;
+}
+export default Spellbook;
 

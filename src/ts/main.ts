@@ -33,6 +33,8 @@ import Inventory from './classes/Inventory';
 import EquippedItems from './classes/EquippedItems';
 import Item from './classes/Item';
 import BaneBoon from './classes/BaneBoon';
+import Spellbook from './classes/Spellbook';
+import Group from './classes/Group';
 
 export {
   CoreSettings,
@@ -63,5 +65,7 @@ export {
   Inventory,
   EquippedItems,
   Item,
-  BaneBoon
+  BaneBoon,
+  Spellbook,
+  Group
 }
