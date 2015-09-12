@@ -13,12 +13,11 @@ class Item  {
   resourceId: number;
 
   constructor(item = <Item>{}) {
-  this.id = item.id ||  "";
-  this.type = item.type ||  itemType.NONE;
-  this.name = item.name ||  "";
-  this.description = item.description ||  "";
-  this.resourceId = item.resourceId ||  0;
-
+    this.id = item.id ||  "";
+    this.type = item.type ||  itemType.NONE;
+    this.name = item.name ||  "";
+    this.description = item.description ||  "";
+    this.resourceId = item.resourceId ||  0;
   }
 
   static create() {
