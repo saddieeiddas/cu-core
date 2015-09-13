@@ -1,5 +1,5 @@
 cu-core
-======================
+=======
 
 > Core Camelot Unchained Client Library
 
@@ -34,17 +34,17 @@ Clone the Repository and run:
 
 ```
 npm install
-tsd install
+gulp install
 ```
 
 Build using gulp
 
 ```
-gulp
+gulp build
 ```
 
 or for builds as you develop
 
 ```
-gulp watch
+gulp
 ```
