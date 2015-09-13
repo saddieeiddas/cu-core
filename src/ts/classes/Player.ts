@@ -21,6 +21,10 @@ class Player extends Combatant {
   setRace(race: race) {
     this.race = race;
   }
+    
+  setArchetype(archetype: archetype) {
+    this.archetype = archetype;
+  }
 
   static create() {
     let a = new Player();
