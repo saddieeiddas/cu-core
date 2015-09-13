@@ -30,6 +30,10 @@
     "files": [
         "./src/ts/CoreSettings.ts",
         "./src/ts/classes/Ability.ts",
+        "./src/ts/classes/Combatant.ts",
+        "./src/ts/classes/ControlGame.ts",
+        "./src/ts/classes/Player.ts",
+        "./src/ts/classes/Population.ts",
         "./src/ts/client.ts",
         "./src/ts/clientInterface.ts",
         "./src/ts/constants/abilityTags.ts",
