@@ -974,11 +974,7 @@ declare module '__cu-core/classes/Character' {
     import Inventory from '__cu-core/classes/Inventory';
     import EquippedItems from '__cu-core/classes/EquippedItems';
     import BaneBoon from '__cu-core/classes/BaneBoon';
-    class Character extends Player {
-        inventory: Inventory;
-        banes: BaneBoon[];
-        boons: BaneBoon[];
-        equippedItems: EquippedItems;
+    export interface PrimaryStats {
         strength: number;
         agility: number;
         endurance: number;
@@ -989,11 +985,15 @@ declare module '__cu-core/classes/Character' {
         attunement: number;
         faith: number;
         eyesight: number;
+    }
+    export interface SecondaryStats {
         hearing: number;
         clarity: number;
         mass: number;
         presence: number;
         affinity: number;
+    }
+    export interface DerivedStats {
         maxMoveSpeed: number;
         vision: number;
         detection: number;
@@ -1004,6 +1004,15 @@ declare module '__cu-core/classes/Character' {
         healthRegeneration: number;
         maxStamina: number;
         staminaRegeneration: number;
+    }
+    class Character extends Player {
+        inventory: Inventory;
+        banes: BaneBoon[];
+        boons: BaneBoon[];
+        equippedItems: EquippedItems;
+        primaryStats: PrimaryStats;
+        secondaryStats: SecondaryStats;
+        derivedStats: DerivedStats;
         constructor(character?: Character);
         static create(): Character;
     }

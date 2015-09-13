@@ -8,14 +8,7 @@ import Inventory from './Inventory';
 import EquippedItems from './EquippedItems';
 import BaneBoon from './BaneBoon';
 
-class Character extends Player {
-
-  inventory: Inventory;
-  banes: BaneBoon[];
-  boons: BaneBoon[];
-  equippedItems: EquippedItems;
-
-  //Primary
+export interface PrimaryStats {
   strength: number;
   agility: number;
   endurance: number;
@@ -26,15 +19,17 @@ class Character extends Player {
   attunement: number;
   faith: number;
   eyesight: number;
+};
 
-  //Secondary
+export interface SecondaryStats {
   hearing: number;
   clarity: number;
   mass: number;
   presence: number;
   affinity: number;
+};
 
-  //Derived
+export interface DerivedStats {
   maxMoveSpeed: number;
   vision: number;
   detection: number;
@@ -45,6 +40,21 @@ class Character extends Player {
   healthRegeneration: number;
   maxStamina: number;
   staminaRegeneration: number;
+};
+
+
+
+class Character extends Player{
+
+  inventory: Inventory;
+  banes: BaneBoon[];
+  boons: BaneBoon[];
+  equippedItems: EquippedItems;
+
+  primaryStats: PrimaryStats;
+  secondaryStats: SecondaryStats;
+  derivedStats: DerivedStats;
+
 
 
   constructor(character = <Character>{}) {
@@ -54,34 +64,40 @@ class Character extends Player {
     this.banes = character.banes ||  <BaneBoon[]>[];
     this.banes = character.boons ||  <BaneBoon[]>[];
 
-    this.strength = character.strength || 0;
-    this.agility = character.agility || 0;
-    this.endurance = character.endurance || 0;
-    this.will = character.will || 0;
-    this.resonance = character.resonance || 0;
-    this.dexterity = character.dexterity || 0;
-    this.vitality = character.vitality || 0;
-    this.attunement = character.attunement || 0;
-    this.faith = character.faith || 0;
-    this.eyesight = character.eyesight || 0;
+    /*
+    this.primaryStats = character.primaryStats ||  <PrimaryStats>{};
+    this.secondaryStats = character.secondaryStats ||  <SecondaryStats>{};
+    this.derivedStats = character.derivedStats ||  <DerivedStats>{};
+    */
 
-    this.hearing = character.hearing || 0;
-    this.clarity = character.clarity || 0;
-    this.mass = character.mass || 0;
-    this.presence = character.presence || 0;
-    this.affinity = character.affinity || 0;
+    this.primaryStats.strength = character.primaryStats.strength || 0;
+    this.primaryStats.agility = character.primaryStats.agility || 0;
+    this.primaryStats.endurance = character.primaryStats.endurance || 0;
+    this.primaryStats.will = character.primaryStats.will || 0;
+    this.primaryStats.resonance = character.primaryStats.resonance || 0;
+    this.primaryStats.dexterity = character.primaryStats.dexterity || 0;
+    this.primaryStats.vitality = character.primaryStats.vitality || 0;
+    this.primaryStats.attunement = character.primaryStats.attunement || 0;
+    this.primaryStats.faith = character.primaryStats.faith || 0;
+    this.primaryStats.eyesight = character.primaryStats.eyesight || 0;
 
-    this.maxMoveSpeed = character.maxMoveSpeed || 0;
-    this.vision = character.vision || 0;
-    this.detection = character.detection || 0;
-    this.carryCapacity = character.carryCapacity || 0;
-    this.maxPanic = character.maxPanic || 0;
-    this.panixDecay = character.panixDecay || 0;
-    this.maxHp = character.maxHp || 0;
-    this.healthRegeneration = character.healthRegeneration || 0;
-    this.maxStamina = character.maxStamina || 0;
-    this.staminaRegeneration = character.staminaRegeneration || 0;
+    this.secondaryStats.hearing = character.secondaryStats.hearing || 0;
+    this.secondaryStats.clarity = character.secondaryStats.clarity || 0;
+    this.secondaryStats.mass = character.secondaryStats.mass || 0;
+    this.secondaryStats.presence = character.secondaryStats.presence || 0;
+    this.secondaryStats.affinity = character.secondaryStats.affinity || 0;
 
+    this.derivedStats.maxMoveSpeed = character.derivedStats.maxMoveSpeed || 0;
+    this.derivedStats.vision = character.derivedStats.vision || 0;
+    this.derivedStats.detection = character.derivedStats.detection || 0;
+    this.derivedStats.carryCapacity = character.derivedStats.carryCapacity || 0;
+    this.derivedStats.maxPanic = character.derivedStats.maxPanic || 0;
+    this.derivedStats.panixDecay = character.derivedStats.panixDecay || 0;
+    this.derivedStats.maxHp = character.derivedStats.maxHp || 0;
+    this.derivedStats.healthRegeneration = character.derivedStats.healthRegeneration || 0;
+    this.derivedStats.maxStamina = character.derivedStats.maxStamina || 0;
+    this.derivedStats.staminaRegeneration = character.derivedStats.staminaRegeneration || 0;
+    
   }
 
   static create() {
