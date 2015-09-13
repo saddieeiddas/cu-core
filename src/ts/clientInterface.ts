@@ -37,7 +37,7 @@ interface clientInterface {
 
   FOV(degrees: number): void;
   DropLight(intensity: number, radius: number, red: number, green: number, blue: number): void;
-  ResetLights():void;
+  ResetLights(): void;
 
   OnServerConnected(c: (isConnected: boolean) => void): number;
   CancelOnServerConnected(c: number): void;
@@ -59,8 +59,8 @@ interface clientInterface {
   OnShowUI(callback: (name: string) => void): void;
   OnHideUI(callback: (name: string) => void): void;
 
-  Listen(event: string) : void;
-  Ignore(event: string) : void;
+  Listen(event: string): void;
+  Ignore(event: string): void;
   Fire(event: string, ...args: any[]): void;
   OnEvent(callback: (event: string, ...args: any[]) => void): void;
 
@@ -219,6 +219,9 @@ interface clientInterface {
   netstats_players_newCount: number;
   netstats_players_newBits: number;
   netstats_lag: number;
+  netstats_delay: number;
+  netstats_selfUpdatesPerSec: number;
+  netstats_syncsPerSec: number;
   particlesRenderedCount: number;
   characters: number;
   terrain: number;

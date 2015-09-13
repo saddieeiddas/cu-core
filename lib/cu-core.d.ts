@@ -31,7 +31,9 @@ declare module 'cu-core' {
     import EquippedItems from '__cu-core/classes/EquippedItems';
     import Item from '__cu-core/classes/Item';
     import BaneBoon from '__cu-core/classes/BaneBoon';
-    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, baneBoonCategory, itemType, Ability, Combatant, Player, Character, Inventory, EquippedItems, Item, BaneBoon };
+    import ControlGame from '__cu-core/classes/ControlGame';
+    import Population from '__cu-core/classes/Population';
+    export { CoreSettings, clientInterface, client, abilityTags, archetype, buildUIMode, channelId, dxKeyCodes, emotes, jsKeyCodes, jsToDXKeyCodeMap, race, soundEvents, tagConstraintType, tags, baneBoonCategory, itemType, Ability, Combatant, Player, Character, Inventory, EquippedItems, Item, BaneBoon, ControlGame, Population };
 }
 
 declare module '__cu-core/CoreSettings' {
@@ -203,6 +205,9 @@ declare module '__cu-core/clientInterface' {
         netstats_players_newCount: number;
         netstats_players_newBits: number;
         netstats_lag: number;
+        netstats_delay: number;
+        netstats_selfUpdatesPerSec: number;
+        netstats_syncsPerSec: number;
         particlesRenderedCount: number;
         characters: number;
         terrain: number;
@@ -797,13 +802,32 @@ declare module '__cu-core/constants/soundEvents' {
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     const soundEvents: {
+        CANCEL_ABILITY: number;
+        LOCAL_PLAYER_BEGIN_CAST: number;
+        LOCAL_PLAYER_BEGIN_SWING: number;
+        LOCAL_PLAYER_DEATH: number;
+        LOCAL_PLAYER_SPAWN: number;
+        LOCAL_PLAYER_TOOK_DAMAGE: number;
+        PLAY_FOOTSTEP_LEATHERBOOT_DIRT: number;
+        PLAY_FOOTSTEP_METALBOOT_DIRT: number;
+        PLAY_FOOTSTEP_METALBOOT_WITHMETALARMOR_DIRT: number;
+        PLAY_GENERIC_PROJECTILE: number;
+        PLAY_GENERIC_PROJECTILE_HIT: number;
+        PLAY_INSTRUMENT_ALBION_HORNBASSMOD_LONG_DISTANT_C3_MEDIUMV: number;
         PLAY_LOADINGSCREEN: number;
         PLAY_LOADINGSCREEN_COMPLETE: number;
-        PLAY_MAGIC_HEALING_BANDAGE_END: number;
-        PLAY_MAGIC_HEALING_BANDAGE_START: number;
         PLAY_MAINMENU: number;
-        PLAY_MUSIC_MAINMENU: number;
-        PLAY_MUSIC_MAINMENU_NONSTREAMING: number;
+        PLAY_MELEE_IMPACT: number;
+        PLAY_NATUREAMBIENCE: number;
+        PLAY_SFX_ABILITY_ACTIVATE_SWOOSH_LOCALPLAYER: number;
+        PLAY_SFX_ABILITY_CHARGING_LOOP: number;
+        PLAY_SFX_ABILITY_CONE_STONE_ACTIVATE: number;
+        PLAY_SFX_ABILITY_DART_STONE_ACTIVATE: number;
+        PLAY_SFX_ABILITY_DIRECT_STONE_ACTIVATE: number;
+        PLAY_SFX_ABILITY_HEALING_BANDAGE_END: number;
+        PLAY_SFX_ABILITY_HEALING_BANDAGE_START: number;
+        PLAY_SFX_ABILITY_TOUCH_STONE_ACTIVATE: number;
+        PLAY_SFX_ABILITY_WAVE_STONE_ACTIVATE: number;
         PLAY_UI_ABILITYCRAFTING_ADDSELECTION: number;
         PLAY_UI_ABILITYCRAFTING_BUILD: number;
         PLAY_UI_ABILITYCRAFTING_RESET: number;
@@ -826,6 +850,11 @@ declare module '__cu-core/constants/soundEvents' {
         PLAY_UI_SPELLBOOK_PAGEFLIP_BACKWARD: number;
         PLAY_UI_SPELLBOOK_PAGEFLIP_FORWARD: number;
         PLAY_UI_SPELLBOOK_PUTAWAY: number;
+        PLAYER_BEGIN_CAST: number;
+        PLAYER_BEGIN_SWING: number;
+        PLAYER_DEATH: number;
+        PLAYER_SPAWN: number;
+        PLAYER_TOOK_DAMAGE: number;
         SET_STATE_CHARACTERCREATION_ATTRIBUTES: number;
         SET_STATE_CHARACTERCREATION_BOONSANDBANES: number;
         SET_STATE_CHARACTERCREATION_PREVIEW_ARTHURIAN: number;
@@ -956,7 +985,7 @@ declare module '__cu-core/classes/Player' {
     class Player extends Combatant {
         race: race;
         archetype: archetype;
-        constructor(character?: Player);
+        constructor(player?: Player);
         setRace(race: race): void;
         setArchetype(archetype: archetype): void;
         static create(): Player;
@@ -1091,5 +1120,48 @@ declare module '__cu-core/classes/BaneBoon' {
         static create(): BaneBoon;
     }
     export default BaneBoon;
+}
+
+declare module '__cu-core/classes/ControlGame' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    export interface ControlPoint {
+        faction: string;
+        id: string;
+        size: string;
+        x: number;
+        y: number;
+    }
+    class ControlGame {
+        arthurianScore: number;
+        controlPoints: ControlPoint[];
+        gameState: number;
+        timeLeft: number;
+        tuathaDeDanannScore: number;
+        vikingScore: number;
+        constructor(controlGame?: ControlGame);
+        static create(): ControlGame;
+    }
+    export default ControlGame;
+}
+
+declare module '__cu-core/classes/Population' {
+    /**
+      * This Source Code Form is subject to the terms of the Mozilla Public
+      * License, v. 2.0. If a copy of the MPL was not distributed with this
+      * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+      */
+    class Population {
+        arthurians: number;
+        tuathaDeDanann: number;
+        vikings: number;
+        max: number;
+        constructor(population?: Population);
+        static create(): Population;
+    }
+    export default Population;
 }
 

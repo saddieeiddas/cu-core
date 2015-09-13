@@ -33,6 +33,9 @@ import Inventory from './classes/Inventory';
 import EquippedItems from './classes/EquippedItems';
 import Item from './classes/Item';
 import BaneBoon from './classes/BaneBoon';
+import ControlGame from './classes/ControlGame';
+import Population from './classes/Population';
+
 
 export {
   CoreSettings,
@@ -63,5 +66,8 @@ export {
   Inventory,
   EquippedItems,
   Item,
-  BaneBoon
+  BaneBoon,
+  ControlGame,
+  Population
+
 }

@@ -34,10 +34,12 @@
     <TypeScriptCompile Include="src/ts/classes/BaneBoon.ts"/>
     <TypeScriptCompile Include="src/ts/classes/Character.ts"/>
     <TypeScriptCompile Include="src/ts/classes/Combatant.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/ControlGame.ts"/>
     <TypeScriptCompile Include="src/ts/classes/EquippedItems.ts"/>
     <TypeScriptCompile Include="src/ts/classes/Inventory.ts"/>
     <TypeScriptCompile Include="src/ts/classes/Item.ts"/>
     <TypeScriptCompile Include="src/ts/classes/Player.ts"/>
+    <TypeScriptCompile Include="src/ts/classes/Population.ts"/>
     <TypeScriptCompile Include="src/ts/client.ts"/>
     <TypeScriptCompile Include="src/ts/clientInterface.ts"/>
     <TypeScriptCompile Include="src/ts/constants/abilityTags.ts"/>
