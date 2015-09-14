@@ -35,7 +35,8 @@ import Item from './classes/Item';
 import BaneBoon from './classes/BaneBoon';
 import ControlGame from './classes/ControlGame';
 import Population from './classes/Population';
-
+import Spellbook from './classes/Spellbook';
+import Group from './classes/Group';
 
 export {
   CoreSettings,
@@ -68,6 +69,7 @@ export {
   Item,
   BaneBoon,
   ControlGame,
-  Population
-
+  Population,
+  Spellbook,
+  Group
 }

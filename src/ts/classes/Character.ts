@@ -7,6 +7,8 @@ import Player from './Player';
 import Inventory from './Inventory';
 import EquippedItems from './EquippedItems';
 import BaneBoon from './BaneBoon';
+import SpellBook from './SpellBook';
+import Group from './Group';
 
 class Character extends Player {
 
@@ -14,6 +16,8 @@ class Character extends Player {
   banes: BaneBoon[];
   boons: BaneBoon[];
   equippedItems: EquippedItems;
+  spellBook: SpellBook;
+  group: Group;
 
   //Primary
   strength: number;
@@ -51,8 +55,11 @@ class Character extends Player {
     super(character)
     this.inventory = character.inventory || new Inventory();
     this.equippedItems = character.equippedItems || new EquippedItems();
+    this.spellBook = character.spellBook || new SpellBook();
     this.banes = character.banes ||  <BaneBoon[]>[];
     this.banes = character.boons ||  <BaneBoon[]>[];
+    this.group = character.group ||  null;
+
 
     this.strength = character.strength || 0;
     this.agility = character.agility || 0;
