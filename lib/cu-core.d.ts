@@ -1202,7 +1202,9 @@ declare module '__cu-core/classes/Group' {
       * file, You can obtain one at http://mozilla.org/MPL/2.0/.
       */
     import Player from '__cu-core/classes/Player';
+    import Character from '__cu-core/classes/Character';
     class Group {
+        self: Character;
         members: Player[];
         constructor(group?: Group);
         static create(): Group;

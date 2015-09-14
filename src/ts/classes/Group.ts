@@ -4,12 +4,15 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 import Player from './Player';
-
+import Character from './Character';
 class Group  {
+  self: Character;
   members: Player[];
 
   constructor(group = <Group>{}) {
+    group.self = group.self ||  new Character();
     group.members = group.members ||  <Player[]>[];
+
   }
 
   static create() {
