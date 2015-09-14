@@ -1007,13 +1007,7 @@ declare module '__cu-core/classes/Character' {
     import BaneBoon from '__cu-core/classes/BaneBoon';
     import SpellBook from '__cu-core/classes/SpellBook';
     import Group from '__cu-core/classes/Group';
-    class Character extends Player {
-        inventory: Inventory;
-        banes: BaneBoon[];
-        boons: BaneBoon[];
-        equippedItems: EquippedItems;
-        spellBook: SpellBook;
-        group: Group;
+    export interface PrimaryStats {
         strength: number;
         agility: number;
         endurance: number;
@@ -1024,11 +1018,15 @@ declare module '__cu-core/classes/Character' {
         attunement: number;
         faith: number;
         eyesight: number;
+    }
+    export interface SecondaryStats {
         hearing: number;
         clarity: number;
         mass: number;
         presence: number;
         affinity: number;
+    }
+    export interface DerivedStats {
         maxMoveSpeed: number;
         vision: number;
         detection: number;
@@ -1039,6 +1037,17 @@ declare module '__cu-core/classes/Character' {
         healthRegeneration: number;
         maxStamina: number;
         staminaRegeneration: number;
+    }
+    class Character extends Player {
+        inventory: Inventory;
+        banes: BaneBoon[];
+        boons: BaneBoon[];
+        equippedItems: EquippedItems;
+        spellBook: SpellBook;
+        group: Group;
+        primaryStats: PrimaryStats;
+        secondaryStats: SecondaryStats;
+        derivedStats: DerivedStats;
         constructor(character?: Character);
         static create(): Character;
     }
